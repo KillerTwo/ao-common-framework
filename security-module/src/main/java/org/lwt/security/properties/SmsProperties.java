@@ -19,10 +19,9 @@ public class SmsProperties {
 
     private String templateParam = "";
 
-    private String accessKey = "LTAI4Fc2LDfn1n4X9DupmuYe";
+    private String accessKey = "";
 
-    private String accessSecret = "wbq7IdASbqKlNj3DDqbBBUA0a6Jv3R";
-
+    private String accessSecret = "";
 
 
 }
