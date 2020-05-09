@@ -19,6 +19,7 @@ public class SmsProperties {
 
     private String templateParam = "";
 
+	// 清空accessKey
     private String accessKey = "";
 
     private String accessSecret = "";
