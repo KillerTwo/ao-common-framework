@@ -1,54 +1,48 @@
 package org.lwt.modal;
 
-public class Result {
+import java.util.HashMap;
+import java.util.Map;
 
-    private Integer code;
+public class Result extends HashMap<String, Object> {
 
-    private String msg;
-
-    private Object data;
+    public Result() {
+        this.put("code", 0);
+        this.put("msg", "success");
+    }
 
     public Result(Integer code, String msg, Object data) {
-        this.code = code;
-        this.msg = msg;
-        this.data = data;
+        this.put("code", code);
+        this.put("msg", msg);
+        this.put("data", data);
+    }
+
+    public Result(Integer code, String msg) {
+        this.put("code", code);
+        this.put("msg", msg);
     }
 
     public static Result success(Object data) {
-        return new Result(200, "success", data);
+        return new Result(0, "success", data);
     }
-
-
 
     public static Result success(Integer code, Object data) {
         return new Result(code, "success", data);
     }
 
     public static Result error(Integer code, String msg) {
-        return new Result(code, msg, null);
+        return new Result(code, msg);
     }
 
-    public Integer getCode() {
-        return code;
+    public static Result results(Map<String, Object> map) {
+        Result r = new Result();
+        r.putAll(map);
+
+        return r;
     }
 
-    public Object getData() {
-        return data;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
+    @Override
+    public Object put(String key, Object value) {
+        super.put(key, value);
+        return this;
     }
 }

@@ -13,9 +13,9 @@ public class SmsProperties {
 
     private String phoneNumbers = "";
 
-    private String signName = "aopoll";
+    private String signName = "";
 
-    private String templateCode = "SMS_170550108";
+    private String templateCode = "";
 
     private String templateParam = "";
 
